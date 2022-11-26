@@ -100,3 +100,10 @@
     width: 100px;
     height: 40px;
 }
+
+.victory{
+    color: green;
+}
+.defeat{
+    color: red;
+}

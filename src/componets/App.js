@@ -10,6 +10,10 @@ function App() {
   const [underState, setUnderState] = useState(false);
   const [image, setImage] = useState("../assets/images/forca0.png")
   const [errors, setErrors] = useState(0)
+  const [attempt, setAttempt] = useState("")
+  const [attemptButton, setAttemptButton] = useState(false)
+  const [classWord, setClassWord] = useState("");
+  
   return (
     <>
       <Jogo
@@ -24,10 +28,16 @@ function App() {
         setImage={setImage}
         errors={errors}
         setErrors={setErrors}
+        attempt={attempt}
+        setAttempt={setAttempt}
+        attemptButton={attemptButton}
+        setAttemptButton={setAttemptButton}
+        classWord={classWord}
+        setClassWord={setClassWord}
       />
       <div className="containerUser">
         <Letras setLetter={setLetter} setUnderState={setUnderState}/>
-        <Chute />
+        <Chute setAttempt={setAttempt} setAttemptButton={setAttemptButton} />
       </div>
     </>
   );
