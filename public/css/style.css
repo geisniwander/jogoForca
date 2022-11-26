@@ -1,0 +1,82 @@
+
+*{
+    box-sizing: border-box;
+}
+.root{
+    min-width: 100vh;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-y: hidden;
+}
+.containerGame{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.containerUser{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.containerLetters{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 3%;
+    padding-left: 20%;
+    padding-right: 20% ;
+}
+.buttonLetter{
+    width: 5.5%;
+    height: 55%;
+    margin: 1%;
+}
+.gameResult{
+    width: 90%;
+    height: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttonStart{
+    margin-top: 30px;
+    width: 15%;
+    height: 10%;
+    border-radius: 10px;
+    background-color: green;
+    border: none;
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+}
+.containerAnswer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+}
+.inputAsnwer{
+    width: 353px;
+    height: 40px;
+    margin: 1%;
+}
+.buttonAnswer{
+    width: 100px;
+    height: 40px;
+}
+.textAnswer{
+    font-size: 23px;
+    font-weight: 700;
+}
