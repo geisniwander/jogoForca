@@ -15,7 +15,7 @@ function App() {
   const [attemptButton, setAttemptButton] = useState(false);
   const [classWord, setClassWord] = useState("");
   const [clicked, setClicked] = useState("");
-  console.log(clicked)
+  const [finished, setFinished] = useState(false);
   return (
     <>
       <Jogo
@@ -38,6 +38,8 @@ function App() {
         setClassWord={setClassWord}
         gameStart={gameStart}
         setGameStart={setGameStart}
+        finished={finished}
+        setFinished={setFinished}
       />
       <div className="containerUser">
         <Letras
@@ -46,8 +48,10 @@ function App() {
           gameStart={gameStart}
           clicked={clicked}
           setClicked={setClicked}
+          finished={finished}
         />
-        <Chute setAttempt={setAttempt} setAttemptButton={setAttemptButton} />
+        <Chute setAttempt={setAttempt} setAttemptButton={setAttemptButton} gameStart={gameStart} finished={finished}
+/>
       </div>
     </>
   );
