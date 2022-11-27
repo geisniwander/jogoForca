@@ -98,12 +98,12 @@ export default function Jogo(props){
         <div className="containerGame">
             <div className="gameResult">
                 <div className="containerLeft">
-                <img alt="faseImage" src={props.image}/>
+                <img alt="faseImage" src={props.image} data-test="game-image"/>
                 </div>
                 <div className="containerRigth">
-                <button className="buttonStart" disabled={!props.gameStart} onClick={startGame}>Escolher palavra</button>
+                <button className="buttonStart" disabled={!props.gameStart} onClick={startGame} data-test="choose-word">Escolher palavra</button>
                 <div className={`word ${props.classWord}`}>
-                    <h1>{props.underlines}</h1>
+                    <h1 data-test="word" data-answer={props.gameWord}>{props.underlines}</h1>
                 </div>
                 </div>
             </div>
