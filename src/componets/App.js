@@ -5,15 +5,17 @@ import Letras from "./Letras";
 
 function App() {
   const [gameWord, setGameWord] = useState("");
+  const [gameStart, setGameStart] = useState(true);
   const [underlines, setUnderlines] = useState("");
   const [letter, setLetter] = useState("");
   const [underState, setUnderState] = useState(false);
-  const [image, setImage] = useState("../assets/images/forca0.png")
-  const [errors, setErrors] = useState(0)
-  const [attempt, setAttempt] = useState("")
-  const [attemptButton, setAttemptButton] = useState(false)
+  const [image, setImage] = useState("../assets/images/forca0.png");
+  const [errors, setErrors] = useState(0);
+  const [attempt, setAttempt] = useState("");
+  const [attemptButton, setAttemptButton] = useState(false);
   const [classWord, setClassWord] = useState("");
-  
+  const [clicked, setClicked] = useState("");
+  console.log(clicked)
   return (
     <>
       <Jogo
@@ -34,9 +36,17 @@ function App() {
         setAttemptButton={setAttemptButton}
         classWord={classWord}
         setClassWord={setClassWord}
+        gameStart={gameStart}
+        setGameStart={setGameStart}
       />
       <div className="containerUser">
-        <Letras setLetter={setLetter} setUnderState={setUnderState}/>
+        <Letras
+          setLetter={setLetter}
+          setUnderState={setUnderState}
+          gameStart={gameStart}
+          clicked={clicked}
+          setClicked={setClicked}
+        />
         <Chute setAttempt={setAttempt} setAttemptButton={setAttemptButton} />
       </div>
     </>

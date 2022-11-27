@@ -13,11 +13,16 @@ export default function Jogo(props){
     function comparador() { 
         return Math.random() - 0.5; 
     }
-
+    function startGame(){
+        props.setGameStart(false);
+        raffleWord();
+    }
     function raffleWord(){
         word = (palavras.sort(comparador))[1]
         props.setGameWord(word);
         insertUnderline();
+        //console.log(props.gameStart)
+
     }
 
     function insertUnderline(){
@@ -113,7 +118,7 @@ export default function Jogo(props){
                 <img alt="faseImage" src={props.image}/>
                 </div>
                 <div className="containerRigth">
-                <button className="buttonStart" onClick={raffleWord}>Escolher palavra</button>
+                <button className="buttonStart" onClick={startGame}>Escolher palavra</button>
                 <div className={`word ${props.classWord}`}>
                     <h1>{props.underlines}</h1>
                 </div>
