@@ -1,121 +1,132 @@
-
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
-.root{
-    min-width: 100vh;
-    height: 95vh;
-    display: flex;
-    flex-direction: column;
-    overflow-y: hidden;
-    padding-bottom: 7%;
+.root {
+  min-width: 100vh;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+  padding-bottom: 7%;
+  font-family: "Roboto", sans-serif;
 }
-.containerGame{
-    width: 100%;
-    max-height: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 3%;
-    margin-bottom: 2%;
+.containerGame {
+  width: 100%;
+  max-height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3%;
+  margin-bottom: 2%;
 }
-.containerUser{
-    width: 100%;
-    max-height: 20%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.containerUser {
+  width: 100%;
+  max-height: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-.containerLetters{
-    width: 100%;
-    margin-bottom: 1%;
+.containerLetters {
+  width: 100%;
+  margin-bottom: 1%;
 }
-.topLetters, .bottonLetters{
-    width: 100%;
-    display: flex;
-    justify-content: center;
+.topLetters,
+.bottonLetters {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
-.buttonLetter{
-    width: 40px;
-    height: 40px;
-    margin: 0.4%;
-    background-color:#E1ECF4 ;
-    border: 1px solid #7AA7C7;
-    color: #7AA7C7;
-    border-radius: 3px;
+.buttonLetter {
+  width: 40px;
+  height: 40px;
+  margin: 0.4%;
+  background-color: #e1ecf4;
+  border: 1px solid #7aa7c7;
+  color: #7aa7c7;
+  border-radius: 3px;
+  font-size: 16px;
+  font-weight: 700;
 }
-.buttonLetter:disabled{
-    background-color: #9FAAB5 ;
-    color: #798A9F;
+.buttonLetter:disabled {
+  background-color: #9faab5;
+  color: #798a9f;
 }
-.gameResult{
-    width: 90%;
-    height: 90%;
-    display: flex;
-    justify-content: space-between;
+.gameResult {
+  width: 90%;
+  height: 90%;
+  display: flex;
+  justify-content: space-between;
 }
-
-.buttonStart{
-    margin-top: 30px;
-    width: 40%;
-    height: 10%;
-    border-radius: 10px;
-    background-color: green;
-    border: none;
-    color: white;
-    font-weight: 700;
-    font-size: 20px;
+.buttonStart {
+  margin-top: 30px;
+  width: 40%;
+  height: 10%;
+  border-radius: 10px;
+  background-color: #27ae60;
+  border: none;
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
 }
-
-.buttonStart:disabled{
-    background-color: #798A9F;
+.buttonStart:disabled {
+  background-color: #798a9f;
 }
-.containerAnswer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 50%;
+.containerAnswer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50%;
 }
-.inputAsnwer{
-    width: 353px;
-    height: 40px;
-    margin: 1%;
+.inputAsnwer {
+  width: 353px;
+  height: 40px;
+  margin: 1%;
+  border: 1px solid #cccccc;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
 }
-
-.textAnswer{
-    font-size: 23px;
-    font-weight: 700;
+.textAnswer {
+  font-size: 20px;
+  font-weight: 400;
 }
-.containerLeft{
-    height: 100%;
-    width: 50%;
+.containerLeft {
+  height: 100%;
+  width: 50%;
 }
-.containerRigth{
-    width: 50%;
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-end;
-    padding: 1.5%;
-    font-size: 50px;
-    font-weight: 700;
+.containerRigth {
+  width: 50%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 1.5%;
+  font-size: 50px;
+  font-weight: 700;
 }
-
-.containerLeft img{
-    height: 100%;
-
+.containerLeft img {
+  height: 100%;
 }
-.buttonAnswer{
-    width: 100px;
-    height: 40px;
+.buttonAnswer {
+  width: 100px;
+  height: 40px;
+  background-color: #e1ecf4;
+  border: 1px solid #7aa7c7;
+  color: #7aa7c7;
+  border-radius: 3px;
+  font-size: 16px;
+  font-weight: 700;
 }
-
-.victory{
-    color: green;
+.victory {
+  color: #27ae60;
 }
-.defeat{
-    color: red;
+.defeat {
+  color: red;
+}
+.wordw {
+  font-size: 50px;
+  font-weight: 500;
+  line-height: 68px;
 }

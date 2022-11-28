@@ -51,8 +51,13 @@ function App() {
           setClicked={setClicked}
           finished={finished}
         />
-        <Chute attempt={attempt} setAttempt={setAttempt} setAttemptButton={setAttemptButton} gameStart={gameStart} finished={finished}
-/>
+        <Chute
+          attempt={attempt}
+          setAttempt={setAttempt}
+          setAttemptButton={setAttemptButton}
+          gameStart={gameStart}
+          finished={finished}
+        />
       </div>
     </>
   );
