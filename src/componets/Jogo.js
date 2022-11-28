@@ -13,12 +13,23 @@ export default function Jogo(props){
         return Math.random() - 0.5; 
     }
     function startGame(){
+        props.setImage(`../assets/images/forca0.png`)
+        props.setUnderlines("");
+        props.setGameWord("");
+        props.setClassWord("");
         props.setGameStart(false);
+        props.setFinished(false);
+        props.setAttemptButton(false);
+        props.setClicked("")
+        props.setUnderState(false)
+        props.setErrors(0)
+        props.setAttempt("")
         raffleWord();
     }
     function raffleWord(){
         word = (palavras.sort(comparador))[1]
         props.setGameWord(word);
+        console.log(word)
         insertUnderline();
     }
 
@@ -60,6 +71,8 @@ export default function Jogo(props){
             errors=(props.errors)+1
             if(errors>=6){
                 endGame("defeat");
+                props.setUnderlines(props.gameWord);
+                props.setUnderState(false);
                 return
             }
             else{
@@ -86,11 +99,16 @@ export default function Jogo(props){
         if(identifier==="victory"){
             props.setImage(`../assets/images/forca0.png`)
             props.setClassWord("victory")
+            props.setGameStart(true);
         }
         else{
-            props.setImage(`../assets/images/forca6.png`)
-            props.setClassWord("defeat")
+            defeat();
         }
+    }
+    function defeat(){
+        props.setImage(`../assets/images/forca6.png`)
+        props.setClassWord("defeat")
+        props.setGameStart(true);
     }
 
   

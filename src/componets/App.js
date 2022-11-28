@@ -40,6 +40,7 @@ function App() {
         setGameStart={setGameStart}
         finished={finished}
         setFinished={setFinished}
+        setClicked={setClicked}
       />
       <div className="containerUser">
         <Letras
