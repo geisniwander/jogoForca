@@ -1,3 +1,6 @@
+import { createGlobalStyle } from 'styled-components'
+
+const GlobalStyle = createGlobalStyle`
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -44,3 +47,19 @@ table {
 strong {
 	font-weight: bold;
 }
+
+* {
+    box-sizing: border-box;
+  }
+  .root {
+    min-width: 100vh;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+    padding-bottom: 7%;
+    font-family: "Roboto", sans-serif;
+  }
+  `
+
+export default GlobalStyle

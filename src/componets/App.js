@@ -2,6 +2,7 @@ import { useState } from "react";
 import Chute from "./Chute";
 import Jogo from "./Jogo";
 import Letras from "./Letras";
+import styled from "styled-components";
 
 function App() {
   const [gameWord, setGameWord] = useState("");
@@ -42,7 +43,7 @@ function App() {
         setFinished={setFinished}
         setClicked={setClicked}
       />
-      <div className="containerUser">
+      <ContainerUser>
         <Letras
           setLetter={setLetter}
           setUnderState={setUnderState}
@@ -58,9 +59,18 @@ function App() {
           gameStart={gameStart}
           finished={finished}
         />
-      </div>
+      </ContainerUser>
     </>
   );
 }
 
 export default App;
+
+const ContainerUser = styled.div`
+  width: 100%;
+  max-height: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`

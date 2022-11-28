@@ -19,5 +19,6 @@
 - [CSS](https://www.w3schools.com/css/)
 - [JS](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
 - [REACT](https://pt-br.reactjs.org/)
+- [STYLED COMPONETS](https://styled-components.com/)
 </br>
 

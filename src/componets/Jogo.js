@@ -1,4 +1,5 @@
 import palavras from "../palavras";
+import styled from "styled-components";
 
 export default function Jogo(props) {
   const {
@@ -122,27 +123,92 @@ export default function Jogo(props) {
   }
 
   return (
-    <div className="containerGame">
-      <div className="gameResult">
-        <div className="containerLeft">
+    <ContainerGame>
+      <GameResult>
+        <ContainerLeft>
           <img alt="faseImage" src={image} data-test="game-image" />
-        </div>
-        <div className="containerRigth">
+        </ContainerLeft>
+        <ContainerRigth>
           <button
-            className="buttonStart"
             disabled={!gameStart}
             onClick={startGame}
             data-test="choose-word"
           >
             Escolher palavra
           </button>
-          <div className={`word ${classWord}`}>
-            <h1 className="wordw" data-test="word" data-answer={gameWord}>
+            <h1 className={`word ${classWord}`} data-test="word" data-answer={gameWord}>
               {underlines}
             </h1>
-          </div>
-        </div>
-      </div>
-    </div>
+        </ContainerRigth>
+      </GameResult>
+    </ContainerGame>
   );
 }
+
+const ContainerGame = styled.div `
+  width: 100%;
+  max-height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3%;
+  margin-bottom: 2%;
+
+`
+const GameResult = styled.div`
+  width: 90%;
+  height: 90%;
+  display: flex;
+  justify-content: space-between;
+
+`
+const ContainerLeft = styled.div`
+  height: 100%;
+  width: 50%;
+  
+  img {
+    height: 100%;
+  }
+`
+
+const ContainerRigth = styled.div`
+  width: 50%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 1.5%;
+  font-size: 50px;
+  font-weight: 700;
+
+  button{
+    margin-top: 30px;
+    width: 40%;
+    height: 10%;
+    border-radius: 10px;
+    background-color: #27ae60;
+    border: none;
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  button:disabled {
+    background-color: #798a9f;
+  }
+
+  h1{
+    font-size: 50px;
+    font-weight: 500;
+    line-height: 68px;
+  }
+
+  .victory {
+    color: #27ae60;
+  }
+
+  .defeat {
+    color: red;
+  }
+`
