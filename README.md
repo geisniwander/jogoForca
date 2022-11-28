@@ -9,7 +9,7 @@
 </br>
 
 ## ✏️ Descrição
-<p align="justify" >Projeto que implementa uma página que disponibiliza um jogo da forca. No incício, o usuário deve clicar o botão "Escolher Palavra" o sistema então sorteará uma palavra e o jogo começará, com os botões de letras e o input ficando habilitados. O usuário deve, então, selecionar as letras que desejar, caso ela exista na palavra os acertos serão substituídos na tela, caso contrário a imagem da forca passará para o proximo nível. Caso o jogador erre 6 vezes, o jogo termina com derrota, caso o jogador escolha chutar a resposta e erre, o jogo termina com derrota, caso acerte o chute ou descubra a palavra letra por letra, com menos de 6 erros, o jogo termina com vitória. Quando o jogo termina, o jogador pode reiniciá-lo com uma nova palavra.</p>
+<p align="justify" >Projeto que implementa uma página que disponibiliza um jogo da forca. No incício, o usuário deve clicar o botão "Escolher Palavra" o sistema então sorteará uma palavra e o jogo começará, com os botões de letras e o input ficando habilitados. O usuário deve, então, selecionar as letras que desejar, caso ela exista na palavra os acertos serão substituídos na tela, caso contrário a imagem da forca passará para o proximo nível. Caso o jogador erre 6 vezes, o jogo termina com derrota, caso o jogador escolha chutar a resposta e erre, o jogo termina com derrota, caso acerte o chute ou descubra a palavra letra por letra, com menos de 6 erros, o jogo termina com vitória. O jogador pode reiniciar o jogo a qualquer momento com uma nova palavra</p>
 
 </br>
 

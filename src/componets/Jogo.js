@@ -20,7 +20,6 @@ export default function Jogo(props) {
     setAttemptButton,
     classWord,
     setClassWord,
-    gameStart,
     setGameStart,
     setFinished,
     setClicked,
@@ -130,11 +129,7 @@ export default function Jogo(props) {
           <img alt="faseImage" src={image} data-test="game-image" />
         </ContainerLeft>
         <ContainerRigth>
-          <button
-            disabled={!gameStart}
-            onClick={startGame}
-            data-test="choose-word"
-          >
+          <button onClick={startGame} data-test="choose-word">
             Escolher palavra
           </button>
           <h1
