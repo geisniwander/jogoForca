@@ -1,34 +1,37 @@
 import palavras from "../palavras"
 
 export default function Jogo(props){
+    const {gameWord,setGameWord,underlines,setUnderlines,letter,underState,setUnderState,image,setImage,
+    errors,setErrors,attempt,setAttempt,attemptButton,setAttemptButton,classWord,setClassWord,gameStart,
+    setGameStart,setFinished,setClicked} = props
     let str=[];
     let word = "";
-    if(props.underState===true){
+    if( underState===true){
         modifyUnderline();
     }
-    if(props.attemptButton){
+    if( attemptButton){
         testAttempt();
     }
     function comparador() { 
         return Math.random() - 0.5; 
     }
     function startGame(){
-        props.setImage(`../assets/images/forca0.png`)
-        props.setUnderlines("");
-        props.setGameWord("");
-        props.setClassWord("");
-        props.setGameStart(false);
-        props.setFinished(false);
-        props.setAttemptButton(false);
-        props.setClicked("")
-        props.setUnderState(false)
-        props.setErrors(0)
-        props.setAttempt("")
+         setImage(`../assets/images/forca0.png`)
+         setUnderlines("");
+         setGameWord("");
+         setClassWord("");
+         setGameStart(false);
+         setFinished(false);
+         setAttemptButton(false);
+         setClicked("")
+         setUnderState(false)
+         setErrors(0)
+         setAttempt("")
         raffleWord();
     }
     function raffleWord(){
         word = (palavras.sort(comparador))[1]
-        props.setGameWord(word);
+         setGameWord(word);
         console.log(word)
         insertUnderline();
     }
@@ -37,18 +40,18 @@ export default function Jogo(props){
         for(let i=0; i<word.length; i++){
           str.push("_ ")
         }
-        props.setUnderlines(str);
+         setUnderlines(str);
     }
 
     function modifyUnderline(){
-        let errors = 0;
+        let err = 0;
         let hit=0;
-        const mword =(props.gameWord)
-        const uword =(props.underlines)
+        const mword =( gameWord)
+        const uword =( underlines)
         const fword = [];
         for(let i=0; i<mword.length;i++){
-            if(mword[i]===props.letter){
-                fword.push(props.letter);
+            if(mword[i]=== letter){
+                fword.push( letter);
                 hit++;
             }
             else{
@@ -64,28 +67,28 @@ export default function Jogo(props){
                 }
             }
         }
-        if(fword.join('')===props.gameWord){
+        if(fword.join('')=== gameWord){
             endGame("victory");
         }
         if(hit===0){
-            errors=(props.errors)+1
-            if(errors>=6){
+            err=(errors)+1
+            if(err>=6){
                 endGame("defeat");
-                props.setUnderlines(props.gameWord);
-                props.setUnderState(false);
+                 setUnderlines( gameWord);
+                 setUnderState(false);
                 return
             }
             else{
-                props.setErrors(errors)
-                props.setImage(`../assets/images/forca${errors}.png`)
+                 setErrors(err)
+                 setImage(`../assets/images/forca${err}.png`)
             }
         }
-        props.setUnderlines(fword);
-        props.setUnderState(false);
+         setUnderlines(fword);
+         setUnderState(false);
     }
 
     function testAttempt(){
-        if(props.attempt===props.gameWord){
+        if( attempt=== gameWord){
             endGame("victory")
         }
         else{
@@ -94,21 +97,21 @@ export default function Jogo(props){
     }
 
     function endGame(identifier){
-        props.setUnderlines(props.gameWord)
-        props.setFinished(true)            
+         setUnderlines( gameWord)
+         setFinished(true)            
         if(identifier==="victory"){
-            props.setImage(`../assets/images/forca0.png`)
-            props.setClassWord("victory")
-            props.setGameStart(true);
+             setImage(`../assets/images/forca0.png`)
+             setClassWord("victory")
+             setGameStart(true);
         }
         else{
             defeat();
         }
     }
     function defeat(){
-        props.setImage(`../assets/images/forca6.png`)
-        props.setClassWord("defeat")
-        props.setGameStart(true);
+         setImage(`../assets/images/forca6.png`)
+         setClassWord("defeat")
+         setGameStart(true);
     }
 
   
@@ -116,12 +119,12 @@ export default function Jogo(props){
         <div className="containerGame">
             <div className="gameResult">
                 <div className="containerLeft">
-                <img alt="faseImage" src={props.image} data-test="game-image"/>
+                <img alt="faseImage" src={ image} data-test="game-image"/>
                 </div>
                 <div className="containerRigth">
-                <button className="buttonStart" disabled={!props.gameStart} onClick={startGame} data-test="choose-word">Escolher palavra</button>
-                <div className={`word ${props.classWord}`}>
-                    <h1 data-test="word" data-answer={props.gameWord}>{props.underlines}</h1>
+                <button className="buttonStart" disabled={!gameStart} onClick={startGame} data-test="choose-word">Escolher palavra</button>
+                <div className={`word ${ classWord}`}>
+                    <h1 data-test="word" data-answer={gameWord}>{underlines}</h1>
                 </div>
                 </div>
             </div>
