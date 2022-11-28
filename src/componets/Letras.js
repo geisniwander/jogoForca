@@ -1,8 +1,36 @@
 import styled from "styled-components";
 
 export default function Letras(props) {
-  const alfabeto1 = ["a","b","c","d","e","f","g","h","i","j","k","l","m",];
-  const alfabeto2 = ["n","o","p","q","r","s","t","u","v","w","x","y","z",];
+  const alfabeto1 = [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+  ];
+  const alfabeto2 = [
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+  ];
   const { setLetter, setUnderState, gameStart, clicked, setClicked, finished } =
     props;
 
@@ -12,28 +40,34 @@ export default function Letras(props) {
     setUnderState(true);
   }
 
-  function Button(pr) {
-    const {l} = pr;
-    return (
-      <button
-        disabled={finished || gameStart || clicked.includes(l) ? true : false}
-        onClick={() => clickedLetter(l)}
-        data-test="letter"
-      >
-        {l}
-      </button>
-    );
-  }
   return (
     <ContainerLetters>
       <TopBottonLetters>
         {alfabeto1.map((l) => (
-          <Button key={l} l={l}/>
+          <button
+            key={l}
+            disabled={
+              finished || gameStart || clicked.includes(l) ? true : false
+            }
+            onClick={() => clickedLetter(l)}
+            data-test="letter"
+          >
+            {l}
+          </button>
         ))}
       </TopBottonLetters>
       <TopBottonLetters>
         {alfabeto2.map((l) => (
-          <Button key={l} l={l}/>
+          <button
+            key={l}
+            disabled={
+              finished || gameStart || clicked.includes(l) ? true : false
+            }
+            onClick={() => clickedLetter(l)}
+            data-test="letter"
+          >
+            {l}
+          </button>
         ))}
       </TopBottonLetters>
     </ContainerLetters>
