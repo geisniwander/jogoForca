@@ -11,9 +11,9 @@ export default function Chute(props) {
         onChange={(e) => setAttempt(e.target.value)}
         onKeyPress={(e) => {
           if (e.key === "Enter") {
-            setAttemptButton(true)
+            setAttemptButton(true);
           }
-      }}
+        }}
         data-test="guess-input"
       ></input>
       <button
@@ -34,12 +34,12 @@ const ContainerAnswer = styled.div`
   width: 100%;
   height: 50%;
 
-  h1{
-      font-size: 20px;
-      font-weight: 400;
+  h1 {
+    font-size: 20px;
+    font-weight: 400;
   }
-  
-  input{
+
+  input {
     width: 353px;
     height: 40px;
     margin: 1%;
@@ -48,7 +48,7 @@ const ContainerAnswer = styled.div`
     border-radius: 3px;
   }
 
-  button{
+  button {
     width: 100px;
     height: 40px;
     background-color: #e1ecf4;
@@ -58,5 +58,4 @@ const ContainerAnswer = styled.div`
     font-size: 16px;
     font-weight: 700;
   }
-
-`
+`;

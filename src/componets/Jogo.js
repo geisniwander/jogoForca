@@ -34,7 +34,8 @@ export default function Jogo(props) {
     testAttempt();
   }
   function comparador() {
-    return Math.random() - 0.5;
+    const factor = 0.5;
+    return Math.random() - factor;
   }
   function startGame() {
     setImage(`../assets/images/forca0.png`);
@@ -51,7 +52,7 @@ export default function Jogo(props) {
     raffleWord();
   }
   function raffleWord() {
-    word = palavras.sort(comparador)[1];
+    word = [...palavras].sort(comparador)[1];
     setGameWord(word);
     insertUnderline();
   }
@@ -136,16 +137,20 @@ export default function Jogo(props) {
           >
             Escolher palavra
           </button>
-            <h1 className={`word ${classWord}`} data-test="word" data-answer={gameWord}>
-              {underlines}
-            </h1>
+          <h1
+            className={`word ${classWord}`}
+            data-test="word"
+            data-answer={gameWord}
+          >
+            {underlines}
+          </h1>
         </ContainerRigth>
       </GameResult>
     </ContainerGame>
   );
 }
 
-const ContainerGame = styled.div `
+const ContainerGame = styled.div`
   width: 100%;
   max-height: 80%;
   display: flex;
@@ -153,23 +158,21 @@ const ContainerGame = styled.div `
   align-items: center;
   margin-top: 3%;
   margin-bottom: 2%;
-
-`
+`;
 const GameResult = styled.div`
   width: 90%;
   height: 90%;
   display: flex;
   justify-content: space-between;
-
-`
+`;
 const ContainerLeft = styled.div`
   height: 100%;
   width: 50%;
-  
+
   img {
     height: 100%;
   }
-`
+`;
 
 const ContainerRigth = styled.div`
   width: 50%;
@@ -182,7 +185,7 @@ const ContainerRigth = styled.div`
   font-size: 50px;
   font-weight: 700;
 
-  button{
+  button {
     margin-top: 30px;
     width: 40%;
     height: 10%;
@@ -198,7 +201,7 @@ const ContainerRigth = styled.div`
     background-color: #798a9f;
   }
 
-  h1{
+  h1 {
     font-size: 50px;
     font-weight: 500;
     line-height: 68px;
@@ -211,4 +214,4 @@ const ContainerRigth = styled.div`
   .defeat {
     color: red;
   }
-`
+`;

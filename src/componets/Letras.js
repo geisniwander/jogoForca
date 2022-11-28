@@ -33,6 +33,12 @@ export default function Letras(props) {
   ];
   const { setLetter, setUnderState, gameStart, clicked, setClicked, finished } =
     props;
+
+  function clickedLetter(l) {
+    setClicked(clicked + l);
+    setLetter(l);
+    setUnderState(true);
+  }
   return (
     <ContainerLetters>
       <TopBottonLetters>
@@ -42,11 +48,7 @@ export default function Letras(props) {
             disabled={
               finished || gameStart || clicked.includes(l) ? true : false
             }
-            onClick={() => {
-              setClicked(clicked + l);
-              setLetter(l);
-              setUnderState(true);
-            }}
+            onClick={() => clickedLetter(l)}
             data-test="letter"
           >
             {l}
@@ -60,11 +62,7 @@ export default function Letras(props) {
             disabled={
               finished || gameStart || clicked.includes(l) ? true : false
             }
-            onClick={() => {
-              setClicked(clicked + l);
-              setLetter(l);
-              setUnderState(true);
-            }}
+            onClick={() => clickedLetter(l)}
             data-test="letter"
           >
             {l}
@@ -78,8 +76,8 @@ export default function Letras(props) {
 const ContainerLetters = styled.div`
   width: 100%;
   margin-bottom: 1%;
-`
-const TopBottonLetters = styled.div` 
+`;
+const TopBottonLetters = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
@@ -99,4 +97,4 @@ const TopBottonLetters = styled.div`
     background-color: #9faab5;
     color: #798a9f;
   }
-`
+`;
