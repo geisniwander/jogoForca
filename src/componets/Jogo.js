@@ -182,8 +182,8 @@ const ContainerRigth = styled.div`
 
   button {
     margin-top: 30px;
-    width: 28%;
-    height: 12%;
+    width: 200px;
+    height: 60px;
     border-radius: 10px;
     background-color: #27ae60;
     border: none;

@@ -18,6 +18,7 @@ export default function Letras(props) {
       <button
         disabled={finished || gameStart || clicked.includes(l) ? true : false}
         onClick={() => clickedLetter(l)}
+        data-test="letter"
       >
         {l}
       </button>
@@ -27,12 +28,12 @@ export default function Letras(props) {
     <ContainerLetters>
       <TopBottonLetters>
         {alfabeto1.map((l) => (
-          <Button key={l} l={l} data-test="letter" />
+          <Button key={l} l={l}/>
         ))}
       </TopBottonLetters>
       <TopBottonLetters>
         {alfabeto2.map((l) => (
-          <Button key={l} l={l} data-test="letter" />
+          <Button key={l} l={l}/>
         ))}
       </TopBottonLetters>
     </ContainerLetters>
